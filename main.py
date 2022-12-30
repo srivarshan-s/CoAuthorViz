@@ -1,4 +1,5 @@
 from utils import load_sessions, read_session
+from events import *
 
 
 def main():
@@ -11,33 +12,33 @@ def main():
 
     for event in events:
         if event["eventName"] == "system-initialize":
-            print("system-initialize")
+            system_initialize()
         if event["eventName"] == "cursor-backward":
-            print("cursor-backward")
+            cursor_backward()
         if event["eventName"] == "cursor-forward":
-            print("cursor-forward")
+            cursor_forward()
         if event["eventName"] == "cursor-select":
-            print("cursor-select")
+            cursor_select()
         if event["eventName"] == "suggestion-close":
-            print("suggestion-close")
+            suggestion_close()
         if event["eventName"] == "suggestion-down":
-            print("suggestion-down")
+            suggestion_down()
         if event["eventName"] == "suggestion-get":
-            print("suggestion-get")
+            suggestion_get()
         if event["eventName"] == "suggestion-hover":
-            print("suggestion-hover")
+            suggestion_hover()
         if event["eventName"] == "suggestion-open":
-            print("suggestion-open")
+            suggestion_open()
         if event["eventName"] == "suggestion-reopen":
-            print("suggestion-reopen")
+            suggestion_reopen()
         if event["eventName"] == "suggestion-select":
-            print("suggestion-select")
+            suggestion_select()
         if event["eventName"] == "suggestion-up":
-            print("suggestion-up")
+            suggestion_up()
         if event["eventName"] == "text-delete":
-            print("text-delete")
+            text_delete()
         if event["eventName"] == "text-insert":
-            print("text-insert")
+            text_insert()
 
 
 if __name__ == "__main__":
