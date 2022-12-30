@@ -55,6 +55,6 @@ def text_insert(buffer, event, cursor_pos):
     if len(event["textDelta"]["ops"]) == 2:
         insert_char = event["textDelta"]["ops"][1]["insert"]
         buffer = list(buffer)
-        buffer.insert(cursor_pos+1, insert_char)
+        buffer.insert(cursor_pos, insert_char)
         buffer = ''.join(buffer)
     return buffer, event["currentCursor"]
