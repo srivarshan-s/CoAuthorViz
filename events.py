@@ -1,5 +1,6 @@
-def system_initialize():
-    pass
+def system_initialize(event):
+    buffer = event["currentDoc"]
+    return buffer, event["currentCursor"]
 
 
 def cursor_backward():
