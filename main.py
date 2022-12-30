@@ -47,7 +47,7 @@ def main():
         if event["eventName"] == "text-delete":
             text_delete()
         if event["eventName"] == "text-insert":
-            text_insert()
+            buffer, cursor_pos = text_insert(buffer, event, cursor_pos)
 
         text_buffer.append(buffer)
         
