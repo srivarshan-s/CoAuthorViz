@@ -13,13 +13,16 @@ def load_sessions():
         f'Successfully downloaded {len(sessions)} writing sessions in CoAuthor!')
     return sessions
 
+
 def read_session(session):
     events = []
     with open(session, 'r') as f:
         for event in f:
             events.append(json.loads(event))
-    print(f'Successfully read {len(events)} events in a writing session from {session}')
+    print(
+        f'Successfully read {len(events)} events in a writing session from {session}')
     return events
+
 
 def main():
     sessions = load_sessions()
