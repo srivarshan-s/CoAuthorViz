@@ -45,15 +45,15 @@ def main():
         if event["eventName"] == "suggestion-up":
             suggestion_up()
         if event["eventName"] == "text-delete":
-            text_delete()
+             buffer, cursor_pos = text_delete(buffer, event, cursor_pos)
         if event["eventName"] == "text-insert":
             buffer, cursor_pos = text_insert(buffer, event, cursor_pos)
 
         text_buffer.append(buffer)
         
-        # os.system('clear')
-        # print(buffer)
-        # time.sleep(0.0001)
+        os.system('clear')
+        print(buffer)
+        time.sleep(0.001)
 
 
 if __name__ == "__main__":
