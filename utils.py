@@ -17,6 +17,6 @@ def read_writing_session(path):
     with open(path, 'r') as f:
         for event in f:
             events.append(json.loads(event))
-    print(f'Successfully read {len(events)} events in a writing session from {path}')
+    # print(f'Successfully read {len(events)} events in a writing session from {path}')
     return events
 
