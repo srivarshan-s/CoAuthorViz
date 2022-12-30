@@ -22,7 +22,7 @@ def main():
 
         if event["eventName"] == "system-initialize":
             buffer, cursor_pos = system_initialize(event)
-        if event["eventName"] in ["cursor-backward", "cursor-forward"] :
+        if event["eventName"] in ["cursor-backward", "cursor-forward", "suggestion-close"] :
             cursor_pos = move_cursor(event)
         if event["eventName"] == "cursor-select":
             cursor_select()
