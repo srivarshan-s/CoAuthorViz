@@ -1,11 +1,11 @@
-import os
+from utils import read_file
 
-dataset_dir = "./coauthor-v1.0/"
 
-paths = [
-    os.path.join(dataset_dir, path) 
-    for path in os.listdir(dataset_dir) 
-    if path.endswith('jsonl')
-]
+def main():
+    dataset_dir = "./coauthor-v1.0/"
+    event = read_file(dir=dataset_dir, index=0)
+    print(len(event))
 
-print(f'Successfully downloaded {len(paths)} writing sessions in CoAuthor!')
+
+if __name__ == "__main__":
+    main()
