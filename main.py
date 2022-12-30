@@ -1,21 +1,30 @@
-from utils import read_file
-from operations import system_init, text_insert
+import os
+import json
 
+
+def load_sessions():
+    dataset_dir = './coauthor-v1.0'
+    sessions = [
+        os.path.join(dataset_dir, path)
+        for path in os.listdir(dataset_dir)
+        if path.endswith('jsonl')
+    ]
+    print(
+        f'Successfully downloaded {len(sessions)} writing sessions in CoAuthor!')
+    return sessions
+
+def read_session(session):
+    events = []
+    with open(session, 'r') as f:
+        for event in f:
+            events.append(json.loads(event))
+    print(f'Successfully read {len(events)} events in a writing session from {session}')
+    return events
 
 def main():
-    dataset_dir = "./coauthor-v1.0/"
-    author_file = read_file(dir=dataset_dir, index=0)
-    text_buffer = []
-    cursor_pos = 0
-    for event in author_file:
-        event_name = event["eventName"]
-        buffer = str("")
-        if event_name == "system-initialize":
-            buffer, cursor_pos = system_init(event)
-        if event_name == "text-insert":
-            buffer, cursor_pos = text_insert(text_buffer, cursor_pos, event)
-        text_buffer.append(buffer)
-    print(text_buffer)
+    sessions = load_sessions()
+    events = read_session(sessions[0])
+    print(events[0])
 
 
 if __name__ == "__main__":
