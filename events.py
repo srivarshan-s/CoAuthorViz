@@ -3,12 +3,8 @@ def system_initialize(event):
     return buffer, event["currentCursor"]
 
 
-def cursor_backward():
-    pass
-
-
-def cursor_forward():
-    pass
+def move_cursor(event):
+    return event["currentCursor"]
 
 
 def cursor_select():

@@ -22,10 +22,8 @@ def main():
 
         if event["eventName"] == "system-initialize":
             buffer, cursor_pos = system_initialize(event)
-        if event["eventName"] == "cursor-backward":
-            cursor_backward()
-        if event["eventName"] == "cursor-forward":
-            cursor_forward()
+        if event["eventName"] in ["cursor-backward", "cursor-forward"] :
+            cursor_pos = move_cursor(event)
         if event["eventName"] == "cursor-select":
             cursor_select()
         if event["eventName"] == "suggestion-close":
