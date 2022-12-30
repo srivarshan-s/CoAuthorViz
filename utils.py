@@ -8,6 +8,7 @@ def read_file(dir, index):
         for path in os.listdir(dir) 
         if path.endswith('jsonl')
     ]
+    print(f"Reading file {paths[index]}")
     author_file = read_writing_session(paths[index])
     return author_file
 
