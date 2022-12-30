@@ -1,3 +1,6 @@
+import os
+import time
+
 from utils import load_sessions, read_session
 from events import *
 
@@ -11,8 +14,14 @@ def main():
     cursor_pos = 0
 
     for event in events:
+
+        if len(text_buffer) == 0:
+            buffer = ""
+        else:
+            buffer = text_buffer[-1]
+
         if event["eventName"] == "system-initialize":
-            system_initialize()
+            buffer, cursor_pos = system_initialize(event)
         if event["eventName"] == "cursor-backward":
             cursor_backward()
         if event["eventName"] == "cursor-forward":
@@ -39,6 +48,12 @@ def main():
             text_delete()
         if event["eventName"] == "text-insert":
             text_insert()
+
+        text_buffer.append(buffer)
+        
+        # os.system('clear')
+        # print(buffer)
+        # time.sleep(0.0001)
 
 
 if __name__ == "__main__":
