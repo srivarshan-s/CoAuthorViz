@@ -26,8 +26,8 @@ def main():
             cursor_pos = move_cursor(event)
         if event["eventName"] == "cursor-select":
             cursor_select()
-        if event["eventName"] == "suggestion-close":
-            suggestion_close()
+        # if event["eventName"] == "suggestion-close":
+        #     suggestion_close()
         if event["eventName"] == "suggestion-down":
             suggestion_down()
         if event["eventName"] == "suggestion-get":
