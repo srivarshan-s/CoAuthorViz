@@ -8,7 +8,7 @@ def move_cursor(event):
 
 
 def cursor_select():
-    return True
+    return True, event["cursorRange"]
 
 
 def suggestion_close():
@@ -43,17 +43,17 @@ def suggestion_up():
     pass
 
 
-def text_delete(buffer, event, cursor_pos, cursor_select_flag):
+def text_delete(buffer, event, cursor_pos, cursor_select_flag, cursor_range):
     if cursor_select_flag:
         print("Cursor selection is performed!")
     else:
         buffer = list(buffer)
         buffer.pop(cursor_pos)
         buffer = ''.join(buffer)
-    return buffer, event["currentCursor"], False
+    return buffer, event["currentCursor"], False, None
 
 
-def text_insert(buffer, event, cursor_pos, cursor_select_flag):
+def text_insert(buffer, event, cursor_pos, cursor_select_flag, cursor_range):
     if cursor_select_flag:
         print("Cursor selection is performed!")
     else:
@@ -61,4 +61,4 @@ def text_insert(buffer, event, cursor_pos, cursor_select_flag):
         buffer = list(buffer)
         buffer.insert(cursor_pos, insert_char)
         buffer = ''.join(buffer)
-    return buffer, event["currentCursor"], False
+    return buffer, event["currentCursor"], False, None
