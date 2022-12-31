@@ -4,7 +4,7 @@ def system_initialize(event):
 
 
 def move_cursor(event):
-    return event["currentCursor"]
+    return event["currentCursor"], False, None
 
 
 def cursor_select(event):

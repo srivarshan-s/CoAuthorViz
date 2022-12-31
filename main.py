@@ -24,8 +24,8 @@ def main():
 
         if event["eventName"] == "system-initialize":
             buffer, cursor_pos = system_initialize(event)
-        if event["eventName"] in ["cursor-backward", "cursor-forward", "suggestion-close"]:
-            cursor_pos = move_cursor(event)
+        if event["eventName"] in ["cursor-backward", "cursor-forward"]:
+            cursor_pos, cursor_select_flag, cursor_range = move_cursor(event)
         if event["eventName"] == "cursor-select":
             cursor_select_flag, cursor_range = cursor_select(event)
         if event["eventName"] == "suggestion-close":
