@@ -8,7 +8,7 @@ def move_cursor(event):
 
 
 def cursor_select():
-    pass
+    return True
 
 
 def suggestion_close():
