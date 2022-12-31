@@ -7,7 +7,7 @@ def move_cursor(event):
     return event["currentCursor"]
 
 
-def cursor_select():
+def cursor_select(event):
     return True, event["cursorRange"]
 
 

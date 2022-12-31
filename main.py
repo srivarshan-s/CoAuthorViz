@@ -27,7 +27,7 @@ def main():
         if event["eventName"] in ["cursor-backward", "cursor-forward", "suggestion-close"]:
             cursor_pos = move_cursor(event)
         if event["eventName"] == "cursor-select":
-            cursor_select_flag, cursor_range = cursor_select()
+            cursor_select_flag, cursor_range = cursor_select(event)
         if event["eventName"] == "suggestion-close":
             suggestion_close()
         if event["eventName"] == "suggestion-down":
@@ -45,11 +45,11 @@ def main():
         if event["eventName"] == "suggestion-up":
             suggestion_up()
         if event["eventName"] == "text-delete":
-            buffer, cursor_pos, cursor_select_flag = text_delete(
-                buffer, event, cursor_pos, cursor_select_flag)
+            buffer, cursor_pos, cursor_select_flag, cursor_range = text_delete(
+                buffer, event, cursor_pos, cursor_select_flag, cursor_range)
         if event["eventName"] == "text-insert":
-            buffer, cursor_pos, cursor_select_flag = text_insert(
-                buffer, event, cursor_pos, cursor_select_flag)
+            buffer, cursor_pos, cursor_select_flag, cursor_range = text_insert(
+                buffer, event, cursor_pos, cursor_select_flag, cursor_range)
 
         text_buffer.append(buffer)
 
