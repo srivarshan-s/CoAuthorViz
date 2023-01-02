@@ -1,7 +1,7 @@
 import os
 import time
 
-from utils import load_sessions, read_session
+from utils import load_sessions, read_session, read_file
 from events import *
 
 
@@ -9,7 +9,8 @@ def main():
 
     sessions = load_sessions()
     # 7c1e066d0c9c4901921cab117a0b7e73.jsonl
-    events = read_session(sessions[0])
+    events = read_file("7c1e066d0c9c4901921cab117a0b7e73.jsonl")
+    # events = read_session(sessions[0])
 
     text_buffer = []
     cursor_pos = 0
@@ -45,15 +46,19 @@ def main():
             suggestion_select()
         if event["eventName"] == "suggestion-up":
             suggestion_up()
-        if event["eventName"] in ["text-delete", "text-insert"]:
-            buffer, cursor_pos, cursor_select_flag, cursor_range = text_change(
+        if event["eventName"] == "text-insert":
+            buffer, cursor_pos, cursor_select_flag, cursor_range = text_insert(
+                buffer, event, cursor_pos, cursor_select_flag, cursor_range)
+        if event["eventName"] == "text-delete":
+            buffer, cursor_pos, cursor_select_flag, cursor_range = text_delete(
                 buffer, event, cursor_pos, cursor_select_flag, cursor_range)
 
         text_buffer.append(buffer)
 
-        # os.system('clear')
-        # print(buffer)
-        # time.sleep(0.001)
+        os.system('clear')
+        print(buffer)
+        time.sleep(0.001)
+        # time.sleep(1)
 
     # print(text_buffer[-1])
 
