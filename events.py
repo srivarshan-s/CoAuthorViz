@@ -46,6 +46,20 @@ def suggestion_up():
 def text_insert(buffer, event, cursor_pos, cursor_select_flag, cursor_range):
     if cursor_select_flag:
         print("Cursor selection is performed!")
+        for ops in event["textDelta"]["ops"]:
+            key = list(ops.keys())[0]
+            if key == "delete":
+                buffer = list(buffer)
+                delete_range = ops[key]
+                del buffer[cursor_pos:cursor_pos+delete_range]
+                buffer = ''.join(buffer)
+        for ops in event["textDelta"]["ops"]:
+            key = list(ops.keys())[0]
+            if key == "delete":
+                buffer = list(buffer)
+                delete_range = ops[key]
+                del buffer[cursor_pos:cursor_pos+delete_range]
+                buffer = ''.join(buffer)
     else:
         for ops in event["textDelta"]["ops"]:
             key = list(ops.keys())[0]
@@ -62,6 +76,14 @@ def text_insert(buffer, event, cursor_pos, cursor_select_flag, cursor_range):
 def text_delete(buffer, event, cursor_pos, cursor_select_flag, cursor_range):
     if cursor_select_flag:
         print("Cursor selection is performed!")
+        input()
+        for ops in event["textDelta"]["ops"]:
+            key = list(ops.keys())[0]
+            if key == "delete":
+                buffer = list(buffer)
+                delete_range = ops[key]
+                del buffer[cursor_pos:cursor_pos+delete_range]
+                buffer = ''.join(buffer)
     else:
         for ops in event["textDelta"]["ops"]:
             key = list(ops.keys())[0]
