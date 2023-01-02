@@ -24,3 +24,10 @@ def read_session(session, verbose=1):
         print(
             f'Successfully read {len(events)} events in a writing session from {session}')
     return events
+
+
+def read_file(file_name):
+    dataset_dir = './coauthor-v1.0'
+    session = dataset_dir + "/" + file_name
+    events = read_session(session)
+    return events
