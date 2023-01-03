@@ -131,3 +131,4 @@ dmypy.json
 # User specified files
 coauthor-v1.0/
 graph_trial.py
+*.jpg
