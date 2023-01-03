@@ -9,7 +9,8 @@ def main():
 
     sessions = load_sessions()
     # 7c1e066d0c9c4901921cab117a0b7e73.jsonl
-    events = read_file("7c1e066d0c9c4901921cab117a0b7e73.jsonl")
+    # events = read_file("7c1e066d0c9c4901921cab117a0b7e73.jsonl")
+    events = read_file("6a0e4a84b6624948b9373a84488399cd.jsonl")
     # events = read_session(sessions[0])
 
     text_buffer = []
