@@ -27,7 +27,8 @@ def read_session(session, verbose=1):
 
 
 def read_file(file_name):
-    dataset_dir = './coauthor-v1.0'
-    session = dataset_dir + "/" + file_name
+    # dataset_dir = './coauthor-v1.0'
+    # session = dataset_dir + "/" + file_name
+    session = file_name
     events = read_session(session)
     return events
