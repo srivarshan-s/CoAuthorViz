@@ -6,42 +6,42 @@ from utils import read_file
 from operations import build_text
 
 
+# Function to generate entire text buffer from the event sequence
+def generate_buffer(events):
+    text_buffer = []
+    for event in events:
+        buffer = build_text(text_buffer, event)
+        text_buffer.append(buffer)
+    return text_buffer
+
+
+# Function to play the text buffer
+def play(buffer, speed='fast'):
+    speed_dict = {
+            "fast": 0.001,
+            "medium": 0.01,
+            "slow": 0.1,
+            }
+    for text in buffer:
+        os.system('clear')
+        print(text)
+        time.sleep(speed_dict[speed])
+
+
 def main():
-
-    # # 7c1e066d0c9c4901921cab117a0b7e73.jsonl
-    # events = read_file("7c1e066d0c9c4901921cab117a0b7e73.jsonl")
-    # # events = read_file("6a0e4a84b6624948b9373a84488399cd.jsonl")
-    # # events = read_session(sessions[0])
-
-    # text_buffer = []
-
-    # for event in events:
-    #     buffer = build_text(text_buffer, event)
-    #     text_buffer.append(buffer)
-    #     # os.system('clear')
-    #     # print(buffer)
-    #     # time.sleep(0.001)
-
-    # # os.system('clear')
-    # # print(text_buffer[-1])
-    # # print(len(text_buffer), len(events))
-
     if len(sys.argv) == 2:
         file_name = sys.argv[1]
     else:
         file_name = "coauthor-v1.0/7c1e066d0c9c4901921cab117a0b7e73.jsonl"
-
     try:
         events = read_file(file_name)
     except:
         print("Invalid file path!")
         sys.exit()
-
-    text_buffer = []
-
-    for event in events:
+    text_buffer = generate_buffer(events)
+    play(buffer=text_buffer, speed="slow")
         
-
 
 if __name__ == "__main__":
     main()
+
