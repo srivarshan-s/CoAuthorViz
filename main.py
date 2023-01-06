@@ -4,6 +4,7 @@ import time
 
 from utils import read_file
 from operations import build_text
+from events import generate_event_seq
 
 
 # Function to generate entire text buffer from the event sequence
@@ -44,6 +45,7 @@ def main():
         sys.exit()
     text_buffer = generate_buffer(events)
     play(buffer=text_buffer, speed="instant")
+    generate_event_seq(buffer=text_buffer, events=events)
 
 
 if __name__ == "__main__":
