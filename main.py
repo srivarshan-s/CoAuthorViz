@@ -21,11 +21,15 @@ def play(buffer, speed='fast'):
         "fast": 0.001,
         "medium": 0.01,
         "slow": 0.1,
+        "instant": True,
     }
-    for text in buffer:
-        os.system('clear')
-        print(text)
-        time.sleep(speed_dict[speed])
+    if speed_dict[speed] == True:
+        print(buffer[-1])
+    else:
+        for text in buffer:
+            os.system('clear')
+            print(text)
+            time.sleep(speed_dict[speed])
 
 
 def main():
@@ -39,7 +43,7 @@ def main():
         print("Invalid file path!")
         sys.exit()
     text_buffer = generate_buffer(events)
-    play(buffer=text_buffer, speed="slow")
+    play(buffer=text_buffer, speed="instant")
 
 
 if __name__ == "__main__":
