@@ -18,10 +18,10 @@ def generate_buffer(events):
 # Function to play the text buffer
 def play(buffer, speed='fast'):
     speed_dict = {
-            "fast": 0.001,
-            "medium": 0.01,
-            "slow": 0.1,
-            }
+        "fast": 0.001,
+        "medium": 0.01,
+        "slow": 0.1,
+    }
     for text in buffer:
         os.system('clear')
         print(text)
@@ -40,8 +40,7 @@ def main():
         sys.exit()
     text_buffer = generate_buffer(events)
     play(buffer=text_buffer, speed="slow")
-        
+
 
 if __name__ == "__main__":
     main()
-
