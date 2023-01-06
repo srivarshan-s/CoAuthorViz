@@ -147,9 +147,29 @@ def compute_seq(events):
     return events
 
 
+def get_sent_num_and_event_seq(df):
+    
+    temp_dict = {
+        "num_sent": [],
+        "sequence": [],
+    }
+
+    for num in np.unique(df["num_sentences"]):
+        sent = np.array(df[df["num_sentences"] == num]["text_buffer"])[-1]
+        event_seq = np.array(df[df["num_sentences"] == num]["event_name"])
+        temp_dict["num_sent"].append(num)
+        temp_dict["sequence"].append(compute_seq(event_seq))
+
+    return temp_dict
+
+
 def generate_event_seq(buffer, events):
+    
     df = init_df(buffer, events)
     df = extract_sent(df)
     df = extract_event_name(df)
     df = correct_sent_num(df)
-    print(df.head())
+    
+    readable_sent_seq = get_sent_num_and_event_seq(df)
+    
+    return readable_sent_seq
