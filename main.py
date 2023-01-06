@@ -5,6 +5,7 @@ import time
 from utils import read_file
 from operations import build_text
 from events import generate_event_seq
+from summary import stats, print_summary_stats
 
 
 # Function to generate entire text buffer from the event sequence
@@ -44,8 +45,10 @@ def main():
         print("Invalid file path!")
         sys.exit()
     text_buffer = generate_buffer(events)
-    play(buffer=text_buffer, speed="instant")
-    generate_event_seq(buffer=text_buffer, events=events)
+    # play(buffer=text_buffer, speed="instant")
+    event_seq_dict = generate_event_seq(buffer=text_buffer, events=events)
+    # sentence_metrics, api_metrics = stats(event_seq_dict)
+    print_summary_stats(event_seq_dict)
 
 
 if __name__ == "__main__":
