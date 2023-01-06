@@ -63,4 +63,5 @@ def generate_event_seq(buffer, events):
     df = init_df(buffer, events)
     df = extract_sent(df)
     df = extract_event_name(df)
+    df = correct_sent_num(df)
     print(df.head())
