@@ -61,9 +61,11 @@ def correct_sent_num(df):
 
 def compute_seq(events):
 
-    # Remove suggestion-open, suggestion-hover
+    # Remove suggestion-open, suggestion-hover, suggestion-down suggestion-up
     events = np.delete(events, np.where(events == "suggestion-open"))
     events = np.delete(events, np.where(events == "suggestion-hover"))
+    events = np.delete(events, np.where(events == "suggestion-down"))
+    events = np.delete(events, np.where(events == "suggestion-up"))
 
     # Remove text-insert after suggestion-select
     select_flag = False
