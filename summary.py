@@ -50,6 +50,7 @@ def stats(event_seq_dict):
 
     return sentence_metrics, api_metrics
 
+
 def print_summary_stats(event_seq_dict):
     sentence_metrics, api_metrics = stats(event_seq_dict)
     print("SENTENCE LEVEL METRICS")
