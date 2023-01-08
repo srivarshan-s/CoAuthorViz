@@ -67,6 +67,9 @@ def compute_seq(events):
     events = np.delete(events, np.where(events == "suggestion-down"))
     events = np.delete(events, np.where(events == "suggestion-up"))
 
+    # Remove suggestion-reopen (for now; unsure of its impact)
+    events = np.delete(events, np.where(events == "suggestion-reopen"))
+
     # Remove text-insert after suggestion-select
     select_flag = False
     new_events = []
