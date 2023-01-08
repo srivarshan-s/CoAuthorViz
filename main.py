@@ -47,8 +47,9 @@ def main():
     text_buffer = generate_buffer(events)
     # play(buffer=text_buffer, speed="instant")
     event_seq_dict = generate_event_seq(buffer=text_buffer, events=events)
+    print(type(event_seq_dict["sequence"]))
     # sentence_metrics, api_metrics = stats(event_seq_dict)
-    print_summary_stats(event_seq_dict)
+    # print_summary_stats(event_seq_dict)
 
 
 if __name__ == "__main__":
