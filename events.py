@@ -165,6 +165,13 @@ def get_sent_num_and_event_seq(df):
         temp_dict["num_sent"].append(num)
         temp_dict["sequence"].append(compute_seq(event_seq))
 
+    # Bug fix for prompt deletion
+    if temp_dict["num_sent"][0] == 0:
+        for idx in range(len(temp_dict["sequence"])):
+            if "prompt" in temp_dict["sequence"][idx]:
+                temp_arr = temp_dict["sequence"][idx]
+                temp_dict["sequence"][idx] = np.delete(temp_arr, np.where(temp_arr == "prompt"))
+
     return temp_dict
 
 
