@@ -134,3 +134,4 @@ graph_trial.py
 *.jpg
 bokeh_trial.ipynb
 *.html
+*.png
