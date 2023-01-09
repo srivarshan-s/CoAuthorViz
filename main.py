@@ -2,10 +2,11 @@ import os
 import sys
 import time
 
-from utils import read_file
+from utils import read_file, read_id
 from operations import build_text
 from events import generate_event_seq
 from summary import stats, print_summary_stats
+from graph import draw_graph
 
 
 # Function to generate entire text buffer from the event sequence
@@ -45,11 +46,12 @@ def main():
         print("Invalid file path!")
         sys.exit()
     text_buffer = generate_buffer(events)
-    # play(buffer=text_buffer, speed="instant")
+    play(buffer=text_buffer, speed="instant")
     event_seq_dict = generate_event_seq(buffer=text_buffer, events=events)
-    print(type(event_seq_dict["sequence"]))
-    # sentence_metrics, api_metrics = stats(event_seq_dict)
-    # print_summary_stats(event_seq_dict)
+    sentence_metrics, api_metrics = stats(event_seq_dict)
+    print_summary_stats(event_seq_dict)
+    file_id = read_id(file_name)
+    draw_graph(event_seq_dict, name=file_id)
 
 
 if __name__ == "__main__":
