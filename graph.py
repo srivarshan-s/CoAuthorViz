@@ -1,3 +1,7 @@
+import numpy as np
+from PIL import Image, ImageDraw, ImageFont
+
+
 def user_square(x, y):
     x -= 1
     y -= 1
@@ -73,7 +77,17 @@ def user_change(x, y):
         draw.line([(dash, y_start), (dash-2, y_start)], fill="orange", width=3)
 
 
-def init_graph():
+def draw_graph(event_seq_dict, name="graph"):
+
+    # Define global variables
+    global margin
+    global circle_size
+    global sentence_margin
+    global x_padding
+    global y_padding
+    global line_size
+    global draw
+    global font
 
     # Graph config
     margin = 25
@@ -124,3 +138,6 @@ def init_graph():
                 modified_triangle(i+1, idx+1)
             if op == "empty-call":
                 empty_triangle(i+1, idx+1)
+
+    # Save graph
+    image.save(str("./" + name + ".png"))
