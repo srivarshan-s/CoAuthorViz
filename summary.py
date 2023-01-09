@@ -13,7 +13,8 @@ def stats(event_seq_dict):
 
     for seq in event_seq_dict["sequence"]:
 
-        if ("gpt3-call" not in seq) and ("empty-call" not in seq):
+        # if ("gpt3-call" not in seq) and ("empty-call" not in seq):
+        if ("gpt3-call" not in seq) and ("prompt" not in seq) and ("user" in seq):
             num_user_authored += 1
         if ("gpt3-call" in seq) and ("user" not in seq):
             if ("prompt" not in seq) and ("modify-gpt3" not in seq):
@@ -30,14 +31,14 @@ def stats(event_seq_dict):
     total_api_calls = num_gpt3_not_satsfd + num_gpt3_used
     num_gpt3_non_mods = num_gpt3_used - num_gpt3_mods
     num_gpt3_auth_user_mod = total_num_sent - \
-        num_gpt3_authored - num_gpt3_authored - num_prompt
+        num_gpt3_authored - num_user_authored - num_prompt
 
     sentence_metrics = {
         "Total number of sentences": total_num_sent,
         "Number of sentences of initial prompt": num_prompt,
         "Number of sentences completely authored by the user": num_user_authored,
         "Number of sentences completely authored by GPT-3": num_gpt3_authored,
-        "Number of sentences authored by GPT-3 with user modification": num_gpt3_auth_user_mod,
+        "Number of sentences authored by GPT-3 and user": num_gpt3_auth_user_mod,
     }
 
     api_metrics = {
