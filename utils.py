@@ -32,3 +32,9 @@ def read_file(file_name):
     session = file_name
     events = read_session(session)
     return events
+
+
+def read_id(file_name):
+    file_name = file_name.split("/")[-1]
+    file_name = file_name.split(".")[0]
+    return file_name
