@@ -10,3 +10,4 @@ Tool to visualize human-machine collaborative writing.
 - pandas
 - numpy
 - nltk
+- pillow
