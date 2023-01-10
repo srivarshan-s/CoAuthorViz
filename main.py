@@ -48,7 +48,7 @@ def main():
     text_buffer = generate_buffer(events)
     play(buffer=text_buffer, speed="instant")
     event_seq_dict = generate_event_seq(buffer=text_buffer, events=events)
-    sentence_metrics, api_metrics = stats(event_seq_dict)
+    # sentence_metrics, api_metrics = stats(event_seq_dict)
     print_summary_stats(event_seq_dict)
     file_id = read_id(file_name)
     draw_graph(event_seq_dict, name=file_id)
