@@ -2,7 +2,8 @@ def exec_ops(original_text, ops):
 
     new_text = ""
 
-    for idx, op in enumerate(ops):
+    # for idx, op in enumerate(ops):
+    for op in ops:
 
         # Retain
         if 'retain' in op:
