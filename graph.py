@@ -2,49 +2,59 @@ import numpy as np
 from PIL import Image, ImageDraw, ImageFont
 
 
+# White square
 def user_square(x, y):
     x -= 1
     y -= 1
     x_start = sentence_margin + margin + x_padding * x
     y_start = margin + y_padding * y
+    # draw.rectangle((x_start, y_start, x_start+circle_size, y_start+circle_size),
+    #                fill = (100, 255, 100, 255), outline ='black')
     draw.rectangle((x_start, y_start, x_start+circle_size, y_start+circle_size),
-                   fill=(100, 255, 100, 255), outline='black')
-
+                   fill="white", outline ='black')
 
 def text(text, y):
     y -= 1
     x_start = margin
     y_start = margin + (circle_size/3) + y_padding * y
-    draw.text((x_start, y_start), text, fill='black', font=font)
+    draw.text((x_start,y_start), text, fill='black', font=font)
 
 
+# Grey triangle
 def gpt_triangle(x, y):
     x -= 1
     y -= 1
     x_start = sentence_margin + margin + x_padding * x
     y_start = margin + y_padding * y
-    draw.polygon([(x_start+circle_size/2, y_start), (x_start, y_start+circle_size),
-                  (x_start+circle_size, y_start+circle_size)],
-                 fill="blue", outline='black')
+    draw.polygon([(x_start+circle_size/2, y_start), (x_start, y_start+circle_size), 
+                  (x_start+circle_size,y_start+circle_size)],
+                 fill = "grey", outline ='black')
 
 
+# Grey circle
 def prompt_circle(x, y):
     x -= 1
     y -= 1
     x_start = sentence_margin + margin + x_padding * x
     y_start = margin + y_padding * y
-    draw.ellipse((x_start, y_start, x_start+circle_size, y_start+circle_size),
-                 fill="black", outline='black')
+    draw.ellipse((x_start, y_start, x_start+circle_size, y_start+circle_size), 
+                 fill = "grey", outline ='black')
+    
 
-
+# White square inscribed with a grey triangle
 def modified_triangle(x, y):
     x -= 1
     y -= 1
     x_start = sentence_margin + margin + x_padding * x
     y_start = margin + y_padding * y
-    draw.polygon([(x_start+circle_size/2, y_start), (x_start, y_start+circle_size),
-                  (x_start+circle_size, y_start+circle_size)],
-                 fill="grey", outline='black')
+    draw.rectangle((x_start, y_start, x_start+circle_size, y_start+circle_size),
+                   fill="white", outline ='black')
+    insc_padding = 3
+    p1 = (x_start+circle_size/2, y_start+insc_padding)
+    p2 = (x_start+insc_padding, y_start+circle_size-insc_padding)
+    p3 = (x_start+circle_size-insc_padding,y_start+circle_size-insc_padding)
+    draw.polygon([p1, p2, p3],
+                 fill = "grey", outline ='black')
 
 
 def empty_triangle(x, y):
@@ -52,19 +62,21 @@ def empty_triangle(x, y):
     y -= 1
     x_start = sentence_margin + margin + x_padding * x
     y_start = margin + y_padding * y
-    draw.polygon([(x_start+circle_size/2, y_start), (x_start, y_start+circle_size),
-                  (x_start+circle_size, y_start+circle_size)],
-                 fill="white", outline='black')
-
+    draw.polygon([(x_start+circle_size/2, y_start), (x_start, y_start+circle_size), 
+                  (x_start+circle_size,y_start+circle_size)],
+                 fill = "white", outline ='black')
+    
 
 def suggestion_open(x, y):
     x -= 1
     y -= 1
     x_start = sentence_margin + margin + x_padding * x + circle_size/2
     y_start = margin + (circle_size/2) + y_padding * y
-    draw.line([(x_start, y_start),
-              (x_start-line_size, y_start)], fill='red', width=3)
-
+    # draw.line([(x_start, y_start),
+    #           (x_start-line_size, y_start)], fill='red', width=3)
+    x_start = int(x_start)
+    for dash in range(x_start, x_start-line_size, -4):
+        draw.line([(dash, y_start), (dash-2, y_start)], fill="black", width=1)
 
 def user_change(x, y):
     x -= 1
@@ -74,7 +86,7 @@ def user_change(x, y):
     # Dotted line
     x_start = int(x_start)
     for dash in range(x_start, x_start-line_size, -4):
-        draw.line([(dash, y_start), (dash-2, y_start)], fill="orange", width=3)
+        draw.line([(dash, y_start), (dash-2, y_start)], fill="black", width=1)
 
 
 def draw_graph(event_seq_dict, name="graph"):
@@ -111,8 +123,6 @@ def draw_graph(event_seq_dict, name="graph"):
 
     # Draw lines
     for idx, event_seq in enumerate(event_seq_dict["sequence"]):
-        image_text = "Sentence " + str(idx+1)
-        text(image_text, idx+1)
         for i, op in enumerate(event_seq):
             if op == "gpt3-call" and i != 0:
                 suggestion_open(i+1, idx+1)
@@ -125,7 +135,7 @@ def draw_graph(event_seq_dict, name="graph"):
 
     # Draw nodes
     for idx, event_seq in enumerate(event_seq_dict["sequence"]):
-        image_text = "Sentence " + str(idx+1)
+        image_text = "Sentence " + str(event_seq_dict["num_sent"][idx])
         text(image_text, idx+1)
         for i, op in enumerate(event_seq):
             if op == "gpt3-call":
