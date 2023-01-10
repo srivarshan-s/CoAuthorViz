@@ -160,7 +160,7 @@ def get_sent_num_and_event_seq(df):
     }
 
     for num in np.unique(df["num_sentences"]):
-        sent = np.array(df[df["num_sentences"] == num]["text_buffer"])[-1]
+        # sent = np.array(df[df["num_sentences"] == num]["text_buffer"])[-1]
         event_seq = np.array(df[df["num_sentences"] == num]["event_name"])
         temp_dict["num_sent"].append(num)
         temp_dict["sequence"].append(compute_seq(event_seq))
