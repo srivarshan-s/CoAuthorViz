@@ -14,7 +14,7 @@ Tool to visualize human-machine collaborative writing.
 
 If using a Debian-based development environment (Ubuntu/Debian/WSL) the user can install the packages using the following command
 
-'sudo apt install wget unzip git'
+`sudo apt install wget unzip git`
 
 ### Python packages
 - pandas
