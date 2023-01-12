@@ -136,3 +136,4 @@ bokeh_trial.ipynb
 *.html
 *.png
 bug_fixes.ipynb
+*trial.ipynb
