@@ -27,7 +27,10 @@ If using a Debian-based development environment (Ubuntu/Debian/WSL) the user can
 - pillow
 
 The python packages can be installed using the following command: <br>
-`$ pip3 install pandas numpy nltk pillow`
+`$ pip3 install pandas numpy nltk pillow` <br>
+A requirements file has also been included with the exact package versions used. <br>
+It can be installed with: <br>
+`$ pip3 install -r requirements.txt`
 
 ## Instructions for downloading the CoAuthor dataset
 
