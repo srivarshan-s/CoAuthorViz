@@ -60,7 +60,7 @@ You can follow along or use any alternative methods if you prefer.
 5. Download the CoAuthor dataset <br>
 `$ ./download_dataset.sh`
 
-6. Run `scripts/main.py` and pass any `JSONL` file from the dataset as an argument <br>
-`$ python3 scripts/main.py coauthor-v1.0/<FILE_NAME>`
+6. Run `scripts/main.py` and pass any `jsonl` file from the dataset as an argument <br>
+`$ python3 scripts/main.py coauthor-v1.0/<FILE_NAME>.jsonl`
 
 7. Done! The graph is generated as `<FILE_NAME>.png` and the summary statisitcs are printed in `stdout`
