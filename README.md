@@ -3,6 +3,7 @@ Tool to visualize human-machine collaborative writing.
 
 ## Directory descriptions
 - **notebooks:** lorem ipsum
+- **scripts:** lorem ipsum
 
 ## Pre-requisites
 
@@ -13,8 +14,7 @@ Tool to visualize human-machine collaborative writing.
 - python
 - pip
 
-If using a Debian-based development environment (Ubuntu/Debian/WSL) the user can install the packages using the following command:
-
+If using a Debian-based development environment (Ubuntu/Debian/WSL) the user can install the packages using the following command: <br>
 `$ sudo apt install wget unzip git python3 python3-pip`
 
 ### Python packages
@@ -23,8 +23,7 @@ If using a Debian-based development environment (Ubuntu/Debian/WSL) the user can
 - nltk
 - pillow
 
-The python packages can be installed using the following command:
-
+The python packages can be installed using the following command: <br>
 `$ pip3 install pandas numpy nltk pillow`
 
 ## Instructions for downloading the CoAuthor dataset
