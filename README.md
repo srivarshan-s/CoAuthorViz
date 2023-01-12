@@ -2,12 +2,14 @@
 Tool to visualize human-machine collaborative writing.
 
 ## Directory descriptions
-- **notebooks:** python notebooks used to generate the graph and summary statistics
+
 - **scripts:** python scripts to to generate the graph and summary statistics 
+- **notebooks:** python notebooks used to perform analysis on summary statistics
 
 ## Pre-requisites
 
 ### System utils
+
 - wget
 - unzip
 - git
@@ -18,6 +20,7 @@ If using a Debian-based development environment (Ubuntu/Debian/WSL) the user can
 `$ sudo apt install wget unzip git python3 python3-pip`
 
 ### Python packages
+
 - pandas
 - numpy
 - nltk
