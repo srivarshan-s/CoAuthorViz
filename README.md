@@ -45,16 +45,22 @@ You can follow along or use any alternative methods if you prefer.
 
 1. Install the dependencies <br>
 `$ sudo apt install wget unzip git python3 python3-pip`
+
 2. Clone the repository and `cd` into the directory <br>
 `$ git clone https://github.com/srivarshan-s/SLAC-GRAPH.git` <br>
 `$ cd SLAC-GRPAH/`
+
 3. Create a new python virtual environment <br>
 `$ python3 -m venv <VENV_NAME>` <br>
 `$ source <VENV_NAME>/bin/activate`
+
 4. Install the python packages <br>
 `$ python3 -m pip install -r requirements.txt`
+
 5. Download the CoAuthor dataset <br>
 `$ ./download_dataset.sh`
+
 6. Run `scripts/main.py` and pass any `JSONL` file from the dataset as an argument <br>
 `$ python3 scripts/main.py coauthor-v1.0/<FILE_NAME>`
+
 7. Done! The graph is generated as `<FILE_NAME>.png` and the summary statisitcs are printed in `stdout`
