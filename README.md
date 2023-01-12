@@ -30,4 +30,5 @@ The python packages can be installed using the following command:
 ## Instructions for downloading the CoAuthor dataset
 
 A bash script has been included to help download the CoAuthor dataset.
+
 It can be run by executing the following command: `./download_dataset.sh`
