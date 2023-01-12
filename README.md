@@ -6,6 +6,7 @@ Tool to visualize human-machine collaborative writing.
 - wget
 - unzip
 - git
+- python
 ### Python packages
 - pandas
 - numpy
