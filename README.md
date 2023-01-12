@@ -51,9 +51,8 @@ You can follow along or use any alternative methods if you prefer.
 `$ cd SLAC-GRPAH/`
 
 3. Create a new python virtual environment <br>
-```
-$ python3 -m venv <VENV_NAME> $ source <VENV_NAME>/bin/activate`
-```
+`$ python3 -m venv <VENV_NAME>` <br>
+`$ source <VENV_NAME>/bin/activate`
 
 4. Install the python packages <br>
 `$ python3 -m pip install -r requirements.txt`
