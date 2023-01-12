@@ -3,7 +3,7 @@ Tool to visualize human-machine collaborative writing.
 
 ## Directory Descriptions
 
-- **scripts:** python scripts to to generate the graph and summary statistics 
+- **scripts:** python scripts to generate the graph and summary statistics 
 - **notebooks:** python notebooks used to perform analysis on summary statistics
 
 ## Dependencies
