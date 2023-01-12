@@ -2,8 +2,8 @@
 Tool to visualize human-machine collaborative writing.
 
 ## Directory descriptions
-- **notebooks:** lorem ipsum
-- **scripts:** lorem ipsum
+- **notebooks:** python notebooks used to generate the graph and summary statistics
+- **scripts:** python scripts to to generate the graph and summary statistics 
 
 ## Pre-requisites
 
