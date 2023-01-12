@@ -15,7 +15,7 @@ Tool to visualize human-machine collaborative writing.
 
 If using a Debian-based development environment (Ubuntu/Debian/WSL) the user can install the packages using the following command:
 
-`sudo apt install wget unzip git python3 python3-pip`
+`$ sudo apt install wget unzip git python3 python3-pip`
 
 ### Python packages
 - pandas
@@ -25,9 +25,12 @@ If using a Debian-based development environment (Ubuntu/Debian/WSL) the user can
 
 The python packages can be installed using the following command:
 
-`pip3 install pandas numpy nltk pillow`
+`$ pip3 install pandas numpy nltk pillow`
 
 ## Instructions for downloading the CoAuthor dataset
 
 A bash script has been included to help download the CoAuthor dataset. <br>
-It can be run by executing the following command: `./download_dataset.sh` or `bash download_dataset.sh`
+
+It can be run by executing the following command: 
+
+`$ ./download_dataset.sh` or `# bash download_dataset.sh`
