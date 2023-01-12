@@ -20,3 +20,6 @@ If using a Debian-based development environment (Ubuntu/Debian/WSL) the user can
 - numpy
 - nltk
 - pillow
+
+The python packages can be installed using the following command:
+`pip3 install pandas numpy nltk pillow`
