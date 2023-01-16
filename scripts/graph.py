@@ -2,7 +2,7 @@ import numpy as np
 from PIL import Image, ImageDraw, ImageFont
 
 
-# White square
+# Black square
 def user_square(x, y):
     x -= 1
     y -= 1
@@ -11,7 +11,7 @@ def user_square(x, y):
     # draw.rectangle((x_start, y_start, x_start+circle_size, y_start+circle_size),
     #                fill = (100, 255, 100, 255), outline ='black')
     draw.rectangle((x_start, y_start, x_start+circle_size, y_start+circle_size),
-                   fill="white", outline ='black')
+                   fill="black", outline ='black')
 
 def text(text, y):
     y -= 1
@@ -31,24 +31,24 @@ def gpt_triangle(x, y):
                  fill = "grey", outline ='black')
 
 
-# Grey circle
+# Black circle
 def prompt_circle(x, y):
     x -= 1
     y -= 1
     x_start = sentence_margin + margin + x_padding * x
     y_start = margin + y_padding * y
     draw.ellipse((x_start, y_start, x_start+circle_size, y_start+circle_size), 
-                 fill = "grey", outline ='black')
+                 fill = "black", outline ='black')
     
 
-# White square inscribed with a grey triangle
+# Black square inscribed with a grey triangle
 def modified_triangle(x, y):
     x -= 1
     y -= 1
     x_start = sentence_margin + margin + x_padding * x
     y_start = margin + y_padding * y
     draw.rectangle((x_start, y_start, x_start+circle_size, y_start+circle_size),
-                   fill="white", outline ='black')
+                   fill="black", outline ='black')
     insc_padding = 3
     p1 = (x_start+circle_size/2, y_start+insc_padding)
     p2 = (x_start+insc_padding, y_start+circle_size-insc_padding)
