@@ -49,7 +49,7 @@ def modified_triangle(x, y):
     y_start = margin + y_padding * y
     draw.rectangle((x_start, y_start, x_start+circle_size, y_start+circle_size),
                    fill="black", outline ='black')
-    insc_padding = 3
+    insc_padding = 1
     p1 = (x_start+circle_size/2, y_start+insc_padding)
     p2 = (x_start+insc_padding, y_start+circle_size-insc_padding)
     p3 = (x_start+circle_size-insc_padding,y_start+circle_size-insc_padding)
