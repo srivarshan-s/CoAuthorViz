@@ -137,4 +137,4 @@ bokeh_trial.ipynb
 *.png
 bug_fixes.ipynb
 *trial.ipynb
-notebook/*.py
+notebooks/*.py
