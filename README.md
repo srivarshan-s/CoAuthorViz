@@ -6,6 +6,7 @@ Tool to visualize human-machine collaborative writing.
 - **scripts:** python scripts to generate the graph and summary statistics 
 - **notebooks:** python notebooks used to perform analysis on summary statistics
 - **csv:** comma seperated value files resulting from the analysis performed
+- **CoAuthorViz-dataset:** new dataset based on the [CoAuthor dataset](https://coauthor.stanford.edu/).
 
 ## Dependencies
 
@@ -36,7 +37,7 @@ It can be installed with: <br>
 
 ## Instructions for Downloading the CoAuthor Dataset
 
-A bash script has been included to help download the [CoAuthor dataset](https://coauthor.stanford.edu/). <br>
+A bash script has been included to help download the CoAuthor dataset. <br>
 It can be run by executing the following command: <br>
 `$ ./download_dataset.sh`
 
