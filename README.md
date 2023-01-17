@@ -25,6 +25,7 @@ If using a Debian-based development environment (Ubuntu/Debian/WSL) the user can
 - numpy
 - nltk
 - pillow
+- scipy
 
 The python packages can be installed using the following command: <br>
 `$ python3 -m pip install pandas numpy nltk pillow` <br>
@@ -47,8 +48,8 @@ You can follow along or use any alternative methods if you prefer.
 `$ sudo apt install wget unzip git python3 python3-pip`
 
 2. Clone the repository and `cd` into the directory <br>
-`$ git clone https://github.com/srivarshan-s/SLAC-GRAPH.git` <br>
-`$ cd SLAC-GRPAH/`
+`$ git clone <REPO_URL>` <br>
+`$ cd <REPO_NAME>/`
 
 3. Create a new python virtual environment <br>
 `$ python3 -m venv <VENV_NAME>` <br>
