@@ -1,4 +1,4 @@
-,Metric,Mean (High Group),Mean (Low Group),STD (High Group),STD (Low Group),T-Statistic,P-Value,Verdict (alpha=0.05)
+,Metric,Mean (High Group),Mean (Low Group),STD (High Group),STD (Low Group),T-Statistic (df=1444),P-Value,Verdict (alpha=0.05)
 0,lemma_ttr,0.39611582719532457,0.40644688188353156,0.05650774956199485,0.05273204599364854,3.5923731870911695,0.0003386762664391577,Means of both groups are different
 1,lemma_mattr,0.7182977377160918,0.7358031241203737,0.042398373252453776,0.03429170943811295,8.631911430693133,1.5668695385105197e-17,Means of both groups are different
 2,lexical_density_tokens,0.4926949109058426,0.4985475465362733,0.040122473149116954,0.03624878219686893,2.9093021736891944,0.003677817400717122,Means of both groups are different
