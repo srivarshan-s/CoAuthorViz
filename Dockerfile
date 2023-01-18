@@ -19,6 +19,8 @@ RUN apk add --no-cache \
     py3-nltk \
     py3-numpy \
     py3-pandas \
+    py3-scipy \
+    py3-matplotlib \
     py3-pillow
 
 RUN mkdir -p /root/nltk_data/
