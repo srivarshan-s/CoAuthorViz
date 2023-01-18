@@ -6,6 +6,7 @@ Tool to visualize human-machine collaborative writing.
 - **scripts:** python scripts to generate the graph and summary statistics 
 - **notebooks:** python notebooks used to perform analysis on summary statistics
 - **csv:** comma seperated value files resulting from the analysis performed
+- **plots:** plots generated from the analysis performed
 - **CoAuthorViz-dataset:** new dataset based on the [CoAuthor dataset](https://coauthor.stanford.edu/).
 
 ## Dependencies
