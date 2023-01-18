@@ -13,7 +13,7 @@ COPY scripts ./scripts/
 COPY notebooks ./notebooks/
 COPY download_dataset.sh .
 
-RUN ./download_dataset.sh
+RUN sh download_dataset.sh
 
 RUN apk add --no-cache \
     py3-nltk \
