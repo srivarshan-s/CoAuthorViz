@@ -1,4 +1,4 @@
-# SLAC-GRAPH
+# CoAuthorViz
 Tool to visualize human-machine collaborative writing.
 
 ## Directory Descriptions
