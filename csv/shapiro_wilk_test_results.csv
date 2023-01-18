@@ -1,4 +1,4 @@
-,Metric,Statistic (Low Group),P-Value (Low Group),Distribution (Low Group),Statistic (High Group),P-Value (High Group),Distribution (High Group)
+,Metric,Statistic (High Group),P-Value (High Group),Distribution (High Group),Statistic (Low Group),P-Value (Low Group),Distribution (Low Group)
 0,lemma_ttr,0.9985173344612122,0.8158395290374756,Normal,0.9985173344612122,0.8158395290374756,Normal
 1,lemma_mattr,0.9904567003250122,0.00013215008948463947,Not Normal,0.9904567003250122,0.00013215008948463947,Not Normal
 2,lexical_density_tokens,0.996504008769989,0.11598163843154907,Normal,0.996504008769989,0.11598163843154907,Normal
