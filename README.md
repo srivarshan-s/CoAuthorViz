@@ -1,6 +1,7 @@
 # CoAuthorViz
 Tool to visualize human-machine collaborative writing using the CoAuthor Dataset
-Paper to cite this work: Shibani, A., Rajalakshmi, R., Mattins, F., Selvaraj, S & Knight, S. (2023). Visual representation of co-authorship with GPT-3: Studying human-machine interaction for effective writing. In Proceedings of the 16th international conference on educational data mining (pp. xx).  International Educational Data Mining Society.
+
+**Paper to cite this work**: Shibani, A., Rajalakshmi, R., Mattins, F., Selvaraj, S & Knight, S. (2023). Visual representation of co-authorship with GPT-3: Studying human-machine interaction for effective writing. In Proceedings of the 16th international conference on educational data mining (pp. xx).  International Educational Data Mining Society.
 
 ## Directory Descriptions
 
