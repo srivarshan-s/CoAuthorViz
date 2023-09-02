@@ -3,8 +3,23 @@ import nltk
 import numpy as np
 
 
+# Function to remove unnecessary character insertions from event list
+def optimize_text_ins(buffer, events):
+    new_buffer = []
+    new_events = []
+    for text, event in zip(buffer, events):
+        # Remove " " character
+        if event["eventName"] == "text-insert":
+            if event["textDelta"]["ops"][1]["insert"] == " ":
+                continue
+        new_buffer.append(text)
+        new_events.append(event)
+    return (new_buffer, new_events)
+
+
 def init_df(buffer, events):
     df = pd.DataFrame()
+    buffer, events = optimize_text_ins(buffer, events)
     df["text_buffer"] = buffer
     df["events"] = events
     return df
